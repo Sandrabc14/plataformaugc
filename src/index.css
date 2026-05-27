@@ -258,3 +258,10 @@ p {
   background: var(--color-primary-light);
   color: var(--color-primary-dark);
 }
+
+.hidden { display: none !important; }
+@media (min-width: 769px) {
+  .md\:flex { display: flex !important; }
+  .md\:block { display: block !important; }
+  .md\:hidden { display: none !important; }
+}
