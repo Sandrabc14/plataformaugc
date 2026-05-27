@@ -34,34 +34,35 @@ const Campaigns = () => {
         </div>
       </header>
 
-      <div className="glass-panel" style={{ padding: 0, overflow: 'hidden' }}>
-        <table style={{ width: '100%', borderCollapse: 'collapse' }}>
-          <thead>
-            <tr style={{ borderBottom: '1px solid var(--glass-border)', textAlign: 'left', background: 'rgba(255,255,255,0.4)' }}>
-              <th style={{ padding: '1rem 1.5rem', fontWeight: 600 }}>Campaña</th>
-              <th style={{ padding: '1rem 1.5rem', fontWeight: 600 }}>Marca</th>
-              <th style={{ padding: '1rem 1.5rem', fontWeight: 600 }}>Presupuesto</th>
-              <th style={{ padding: '1rem 1.5rem', fontWeight: 600 }}>Fecha Límite</th>
-              <th style={{ padding: '1rem 1.5rem', fontWeight: 600 }}>Estado</th>
-            </tr>
-          </thead>
-          <tbody>
-            {campaigns.map(camp => (
-              <tr key={camp.id} style={{ borderBottom: '1px solid var(--glass-border)' }}>
-                <td style={{ padding: '1rem 1.5rem', fontWeight: 500 }}>{camp.title}</td>
-                <td style={{ padding: '1rem 1.5rem' }}>{camp.brand}</td>
-                <td style={{ padding: '1rem 1.5rem', color: 'var(--color-primary-dark)', fontWeight: 600 }}>{camp.budget}</td>
-                <td style={{ padding: '1rem 1.5rem' }}>{camp.deadline}</td>
-                <td style={{ padding: '1rem 1.5rem' }}>
-                  <div className="flex items-center gap-2">
-                    {getStatusIcon(camp.status)}
-                    {getStatusBadge(camp.status)}
-                  </div>
-                </td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
+      <div className="flex flex-col gap-4">
+        {campaigns.map(camp => (
+          <div key={camp.id} className="glass-panel" style={{ padding: '1.5rem', display: 'flex', flexDirection: 'column', gap: '1rem', alignItems: 'center', textAlign: 'center' }}>
+            <div style={{ width: '100%' }}>
+              <h3 style={{ fontSize: '1.2rem', marginBottom: '0.25rem' }}>{camp.title}</h3>
+              <p style={{ color: 'var(--color-text-muted)', fontWeight: 500 }}>{camp.brand}</p>
+            </div>
+            
+            <div className="flex flex-col md:flex-row gap-4 justify-center items-center" style={{ width: '100%', borderTop: '1px solid var(--glass-border)', paddingTop: '1rem' }}>
+              <div style={{ flex: 1 }}>
+                <p style={{ fontSize: '0.8rem', color: 'var(--color-text-muted)' }}>Presupuesto</p>
+                <p style={{ color: 'var(--color-primary-dark)', fontWeight: 600, fontSize: '1.1rem' }}>{camp.budget}</p>
+              </div>
+              
+              <div style={{ flex: 1 }}>
+                <p style={{ fontSize: '0.8rem', color: 'var(--color-text-muted)' }}>Fecha Límite</p>
+                <p style={{ fontWeight: 500 }}>{camp.deadline}</p>
+              </div>
+              
+              <div style={{ flex: 1, display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+                <p style={{ fontSize: '0.8rem', color: 'var(--color-text-muted)', marginBottom: '0.25rem' }}>Estado</p>
+                <div className="flex items-center gap-2 justify-center">
+                  {getStatusIcon(camp.status)}
+                  {getStatusBadge(camp.status)}
+                </div>
+              </div>
+            </div>
+          </div>
+        ))}
       </div>
     </div>
   );
