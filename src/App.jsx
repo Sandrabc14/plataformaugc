@@ -70,7 +70,7 @@ function App() {
   };
 
   return (
-    <Router>
+    <Router basename="/plataformaugc">
       <div className="flex" style={{ minHeight: '100vh', background: 'var(--color-bg)', transition: 'background-color var(--transition-normal)' }}>
         <Sidebar toggleTheme={toggleTheme} theme={theme} />
         <main style={{ flex: 1, padding: '2rem', height: '100vh', overflowY: 'auto', display: 'flex', flexDirection: 'column' }}>
