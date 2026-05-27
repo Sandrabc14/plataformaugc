@@ -186,6 +186,49 @@ p {
     width: 100vw;
   }
 
+  /* Centering on mobile */
+  .container {
+    padding: 0 !important;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  header {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1rem;
+    width: 100%;
+  }
+
+  header.flex.justify-between {
+    flex-direction: column !important;
+  }
+
+  h1, h2, h3, p {
+    text-align: center;
+  }
+
+  .mobile-menu-btn {
+    justify-content: center;
+    position: relative;
+    width: 100%;
+  }
+
+  .mobile-menu-btn button {
+    position: absolute;
+    left: 0;
+  }
+
+  .glass-card, .glass-panel {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+  }
+
   .mobile-overlay {
     display: block;
     position: fixed;
