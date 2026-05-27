@@ -205,3 +205,13 @@ p {
     transform: none !important;
   }
 }
+
+/* Badges */
+.badge {
+  padding: 0.25rem 0.75rem;
+  border-radius: var(--radius-full);
+  font-size: 0.875rem;
+  font-weight: 500;
+  background: var(--color-primary-light);
+  color: var(--color-primary-dark);
+}
